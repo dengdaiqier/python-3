@@ -1,0 +1,84 @@
+ #!/usr/bin/env python3
+ #-*- coding:utf-8 -*-
+
+'a access restriction module'
+
+__author__='Liu Shanshan'
+
+# # # 测试一：
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+	def set_score(self,score):
+		self.__score=score
+	def print_score(self):
+		print('%s:%s'%(self.__name,self.__score))
+bart=Student('Liu Shanshan',99)
+print(bart.print_score())
+
+# # # 测试二：
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+	def get_name(slef):
+		return slef.__name
+	def get_score(slef):
+		return slef.__score
+	def set_score(self,score):
+		self.__score=score
+bart=Student('Liu Shanshan',100)
+print(bart.get_name(),':',bart.get_score())
+# 这边不可以用加号进行链接，可以用逗号进行链接，因为加号需要两边一样才可以进行链接。
+print(bart.set_score(45))
+print(bart.get_score())
+
+# # 测试三：
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+	def get_name(slef):
+		return slef.__name
+	def get_score(slef):
+		return slef.__score
+	def set_score(self,score):
+		if 0<=score<=100:
+			self.__score=score
+		else:
+			raise ValueError('bad score')
+bart=Student('Liu Shanshan',100)
+print(bart.get_name(),':',bart.get_score())
+# 这边不可以用加号进行链接，可以用逗号进行链接，因为加号需要两边一样才可以进行链接。
+print(bart.set_score(100))#这里的范围是0-100，如果不在和范围，将会显示错误，现实的错误为ValueError('bad score')
+print(bart.get_score())
+
+# print(bart._Student__name)
+
+# # 测试四：
+class Student(object):
+	"""docstring for Student"""
+	def __init__(self, name,score):
+		self.__name=name
+		self.__score=score
+	def get_name(self):
+		return self.__name
+	def get_score(self):
+		return self.__score
+str=Student('Liu Shanshan',99)
+print(str.get_name())
+print(str.get_score())
+#print(str.__name)#这是错误的写法，因为加了__就不可以在外面直接引用了
+print(str._Student__name)
+		
+
+#练习
+class Student(object):
+	def __init__(self,name,gender):
+		self.__name=name
+		self.__gender=gender
+	def get_gender(self):
+		return self.__gender
+	def set_gender(self,gender):
+		self.__gender=gender
