@@ -1,0 +1,19 @@
+def numbers(x):
+	sum=0
+	for i in x:
+		sum=sum+i*i
+	return sum
+ber=numbers([2,3,4])
+print(ber)
+# 在for循环中如果只有一个数赋值给前面的值，是运行不了的。
+# 上面的这个是用一个列表来代替一个参数。
+
+
+# 下面这个是用定义的时候就定义多个参数
+def numbers(*x):
+	sum=0
+	for i in x:
+		sum=sum+i*i
+	return sum
+ber=numbers(5,6,7)
+print(ber)
