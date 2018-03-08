@@ -1,0 +1,9 @@
+from functools import reduce
+def aaa(x):
+	d={'1':1,'2':2,'3':3,'4':4,'5':5}
+	return d.get(x)
+def bbb(y,z):
+	return y*10+z
+L=reduce(bbb,map(aaa,'12345'))
+print(L)
+
