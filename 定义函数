@@ -1,0 +1,20 @@
+# 定义函数
+#-*- coding:utf-8 -*-
+def my_new(x):
+	if isinstance(x,(int,float)):
+		raise TypeError('cuol')
+	elif x>0:
+		print('你输入的值大于0')
+	else:
+		print('你输入的值小于0')		
+my_new(10)
+
+# 接下来是求得一元二次方程的解。
+# import math
+# def my_sqrt(a,b,c):
+# 	y=(-b-math.sqrt(math.pow(b,2)-4*a*c))/2*a
+# 	x=(-b+math.sqrt(math.pow(b,2)-4*a*c))/2*a
+# 	return x,y
+# ww,yy=my_sqrt(1,2,3)
+# print('一元二次的解为：'+ww+yy)	
+上面注释的是错误的，
