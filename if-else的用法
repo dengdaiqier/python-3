@@ -1,0 +1,36 @@
+# !/usr/bin/env python3
+#-*- coding: utf-8 -*-
+# 这里才是的是if-else
+age=10
+if age<5:
+	print('不符合条件')
+elif age<10:
+	print('不符合条件')
+elif age==10:
+	print('是的，我是故意打成10的。')
+else:
+	print('呵呵，根本没有这数。')
+# 下面测试的是input输入，输出的是一个字符串。
+unchar=input('birth:')
+sum=int(unchar)
+if sum<2000:
+	print('你不是00后！')
+elif sum<2010:
+	print('你不是10后!')
+else:
+	print('你到底多大了！')
+
+# 下面的是练习题目：
+a=1.75
+b=80.5
+BMI=b/(a*2)
+if BMI<18.5:
+	print('过轻')
+elif 18.5<=BMI<=25:
+	print('正常')
+elif 25<=BMI<=28:
+	print('过重')
+elif 28<=BMI<=32:
+	print('肥胖')
+else:
+	print('严重肥胖')
