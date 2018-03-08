@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+ #-*- coding:utf-8 -*-
+
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum()
+f=lazy_sum(1,3,5,7,9)
+print(f)
+
+# 非常重要的一点：得到一个函数的函数块是写这个函数名，如果需要得到这个函数的函数结果就是写入函数名加上一个括号
+
+# 任务：利用闭包返回一个计数器函数，每次调用它返回递增整数：
+
+# 第一种方法：
+def CreatCount():
+	def f():
+		n=0
+		while True:
+			n=n+1
+			yield n
+	return next(f())
+L=CreatCount()
+print(L)
+
+# 第二个方法：
+def createCounter():
+    def f():
+        n=0
+        while True:
+            n=n+1
+            yield n
+    sun = f()
+    def counter():
+        return next(sun)
+    return counter
+L=createCounter()
+print(L())
+
+# 第三种方法：
+def createCounter():
+    def f():
+        n=0
+        while True:
+            n=n+1
+            yield n
+    def counter():
+        return next(f())
+    return counter
+L=createCounter()
+print(L())
