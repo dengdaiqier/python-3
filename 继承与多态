@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+#-*- coding:utf-8 -*-
+
+'Inheritance and polymorphism'
+
+__authot__='Liu Shanshan'
+
+class animal(object):
+	"""docstring for animal"""
+	def __init__(self,name):
+		self.name=name
+		
+	def print_(self):
+		print('%s'%(self.name))
+	def run(self):
+		print('iiii')
+		
+class Dog(animal):
+	def run(self):
+		print('DOG is running')
+class Cat(animal):
+	pass
+_Dog=Dog('first')
+_Dog.run()
+_cat=Cat('second')
+_cat.run()
+		
+print(isinstance(_Dog,animal))
+_Dog.run()
+
+#测试
+b=animal('third')
+print(isinstance(b,Dog))
+animal('iwi').run()
+animal('www').print_()
