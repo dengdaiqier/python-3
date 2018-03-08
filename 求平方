@@ -1,0 +1,22 @@
+def aaa(x,n):
+	A=isinstance(x,(int,float))
+	if A!=True:
+		return None
+	B=isinstance(n,(int,float))
+	if B!=True:
+		return None
+	if x==0:
+		return None
+	s=1
+	while n>0:
+		n=n-1
+		s=s*x
+	if n==0:
+		return s
+	else:
+		L=abs(n)
+		while L>0:
+			L=L-1
+			s=s*x
+	return 1/s
+print(aaa(0,34))
