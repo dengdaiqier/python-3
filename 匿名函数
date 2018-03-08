@@ -1,0 +1,7 @@
+L=list(filter(lambda x:x%2==1,range(1,20)))
+print(L)
+
+def build(x, y):
+    return lambda: x * x + y * y
+L=build(1,2)
+print(L())
