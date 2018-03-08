@@ -1,0 +1,33 @@
+#-*- conding:utf-8 -*-
+
+
+# 一个错误的程序还没有调！！！
+#2018/2/13调出来了
+
+
+
+def findMinandMax(L):
+	if len(L)>0:
+		if len(L)==1:
+			return(L[0],L[0])
+		else:
+			min= L[0]
+			max= L[0]
+			for i in L:
+				if min>i:
+					min=i
+				if max<i:
+					max=i
+			return (min,max)
+	else:
+		return (None,None)
+if findMinandMax([])!=(None,None):
+	print('测试失败!')
+if findMinandMax([7])!=(7,7):
+	print('测试失败!')
+if findMinandMax([7,1])!=(1,7):
+	print('测试失败！')
+if findMinandMax([2,3,6,4,1,7,9])!=(1,9):
+	print('测试失败!')
+
+print(findMinandMax([4,6,8,1,6,9,2,0,5]))
