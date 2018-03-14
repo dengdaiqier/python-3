@@ -1,0 +1,28 @@
+#!/usr/bin/env python 3
+#-*- coding:utf-8 -*-
+
+'a 实例属性和类属性'
+
+__author__='Liu Shanan'
+
+class Student(object):
+	count=0
+
+	def __init__(self,name):
+		self.name=name
+		Student.count=Student.count+1
+
+#测试
+if Student.count!=0:
+	print('测试失败!')
+else:
+	bart=Student('Bart')
+	if Student.count!=1:
+		print('测试失败')
+	else:
+		lisa=Student('Lisa')
+		if Student.count!=2:
+			print('测试失败')
+		else:
+			print('Student:',Student.count)
+			print('测试成功')
