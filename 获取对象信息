@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+# -*-conding:utf-8 -*-
+
+'获取对象信息'
+
+__author__='Liu Shanshan'
+
+class  MyDoy(object):
+	def __init__(self,name):
+		self.name=name
+	def __len__(self):
+		return 100 
+dog=MyDoy('arg')
+dog.__len__()
+print(len(dog))
+
+#这个非常的关键
+# 先是定义一个类，在类中或者在python中，(__名字__)都是非常
+# 重要的东西，上面的用法是:先把一个变量变成实例变量，然后用len()函数来测试，其实是len()
+# 函数是=里面的东西.__len__()这个方法的，所以把实例变量放入其中的时候，就是会调用上面类__len__()方法
+
+#测试hasattr,getattr,setattr
+print(hasattr(dog,'name'))
+print(hasattr(dog,'__len__'))
+
+
+#小结题目
+class student(object):
+	def read(self):
+		return 123456
+LL=student()
+
+def readData(fpp):
+	print(LL.read())
+
+def readImage(fp):
+	if hasattr(fp,'read'):
+		return readData(fp)
+	return None
+
+readImage(LL)
