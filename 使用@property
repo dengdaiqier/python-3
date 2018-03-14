@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+#-*- coding:utf-8 -*-
+
+'使用@property'
+
+__author__='Liu Shanshan'
+
+# 对属性值进行限制
+class student(object):
+	"""docstring for student"""
+	def get_student(self):
+		return self.score
+	def set_student(self,value):
+		if not isinstance(value,int):
+			raise ValueError('score must be an integer!')
+		if value<0 or value>100:
+			raise ValueError('score must be between 0-100')
+		self.score=value
+
+s=student()
+s.set_student(23)
+print(s.get_student())
+
+#对@property的测试
+class Student(object):
+	@property
+	def score(self):
+		return self._score
+	@score.setter
+	def score(self,value):
+		if not isinstance(value,int):
+			raise ValueError('sss')
+		if value<0 or value>100:
+			raise ValueError('ii')
+		self._score=value
+	@property
+	def age(self):
+		return self._score
+s=Student()
+s.score=55
+print(s.score)	
+print(s.age)
+
+
+#练习
+class Student(object):
+	#下面是width属性的读写函数属性
+	@property
+	def width(self):
+		return self._width
+	@width.setter
+	def width(self,value):
+		if not isinstance(value,int):
+			raise ValueError('你需要输入整数')
+		if value<0:
+			raise ValueError('你输入的值小于1，你需要输入比1大的值!')
+		self._width=value
+
+	#下面是height属性的读写函数属性
+	@property
+	def height(self):
+		return self._height
+	@height.setter
+	def height(self,value):
+		if not isinstance(value,int):
+			raise ValueError('你需要输入整数')
+		if value<0 :
+			raise ValueError('你输入的值小于1，你需要输入比1大的值!')
+		self._height=value
+
+	#下面是只读resolution属性
+	@property
+	def _resolution(self):
+		return self._height*self._width
+s=Student()
+s._width=160
+s._height=178
+print(s._width)
+print(s._height)
+print(s._resolution)
+
