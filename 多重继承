@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+#-*- coding:utf-8 -*-
+
+'Inheritance and polymorphism'
+
+__authot__='Liu Shanshan'
+
 class Animal(object):
 	pass
 #大类
